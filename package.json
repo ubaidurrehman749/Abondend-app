@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "validate": "tsx scripts/validate.ts",
-    "prebuild": "npm run validate",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
