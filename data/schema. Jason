@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "date", "location", "goal", "payload", "story", "modelPath", "status", "evidence", "openQuestion", "legacy", "sources", "credits", "verified"],
+    "properties": {
+      "id": { "type": "string" },
+      "name": { "type": "string" },
+      "date": { "type": "string" },
+      "location": { "type": "string", "enum": ["Moon", "Mars"] },
+      "goal": { "type": "string" },
+      "payload": { "type": "array", "items": { "type": "string" } },
+      "story": { "type": "string" },
+      "modelPath": { "type": "string" },
+      "verified": { "type": "boolean" },
+      "status": {
+        "type": "object",
+        "required": ["value", "checkedOn"],
+        "properties": {
+          "value": { "type": "string", "enum": ["inactive", "silent", "operating"] },
+          "checkedOn": { "type": ["string", "null"] }
+        }
+      },
+      "evidence": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["text", "label", "sourceId"],
+          "properties": {
+            "text": { "type": "string" },
+            "label": { "type": "string", "enum": ["confirmed", "interpretation", "unknown"] },
+            "sourceId": { "type": "string" }
+          }
+        }
+      },
+      "openQuestion": {
+        "type": "object",
+        "required": ["prompt", "choices", "theme"],
+        "properties": {
+          "prompt": { "type": "string" },
+          "choices": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "string" } },
+          "evidenceOptions": { "type": "array", "items": { "type": "string" } },
+          "theme": { "type": "string", "enum": ["water", "life", "geology", "atmosphere", "exploration", "future"] }
+        }
+      },
+      "legacy": { "type": "string" },
+      "sources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["id", "title", "publisher", "url"],
+          "properties": {
+            "id": { "type": "string" },
+            "title": { "type": "string" },
+            "publisher": { "type": "string" },
+            "url": { "type": "string" }
+          }
+        }
+      },
+      "credits": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["asset", "creator", "license"],
+          "properties": {
+            "asset": { "type": "string" },
+            "creator": { "type": "string" },
+            "license": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}
