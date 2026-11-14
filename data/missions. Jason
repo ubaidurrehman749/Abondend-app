@@ -1,0 +1,39 @@
+[
+  {
+    "id": "opportunity",
+    "name": "Opportunity rover",
+    "date": "TO VERIFY",
+    "location": "Mars",
+    "goal": "TO VERIFY",
+    "payload": ["TO VERIFY"],
+    "story": "TO WRITE",
+    "modelPath": "/models/opportunity.glb",
+    "verified": false,
+    "status": { "value": "inactive", "checkedOn": null },
+    "evidence": [
+      {
+        "text": "Found evidence of ancient environments where liquid water was present.",
+        "label": "confirmed",
+        "sourceId": "nasa-opportunity"
+      },
+      {
+        "text": "Whether any ancient Martian environment supported life.",
+        "label": "unknown",
+        "sourceId": "nasa-opportunity"
+      }
+    ],
+    "openQuestion": {
+      "prompt": "Mars once had water. What would you search for next?",
+      "choices": ["Signs of ancient life", "How the environment changed", "A different kind of rock"],
+      "evidenceOptions": ["TO WRITE"],
+      "theme": "water"
+    },
+    "legacy": "TO WRITE",
+    "sources": [
+      { "id": "nasa-opportunity", "title": "TO VERIFY", "publisher": "NASA", "url": "https://science.nasa.gov" }
+    ],
+    "credits": [
+      { "asset": "TO VERIFY", "creator": "TO VERIFY", "license": "TO VERIFY" }
+    ]
+  }
+]
